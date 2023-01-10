@@ -40,10 +40,10 @@ extension WelcomeViewController {
     }
     
 //    func fibonacci(n: Int) {
-//        
+//
 //        var sequence = [0, 1]
 //        let numberOfSequenceToRun = n - 2
-//        
+//
 //        while sequence.count < n {
 //            if let lastNumber = sequence.last {
 //                let previousNumber = sequence[sequence.count - 2]
