@@ -36,7 +36,7 @@ extension WelcomeViewController {
 //        }
     
     func animateTitle() {
-        titleLabel.text = "⚡️FlashChat"
+        titleLabel.text = K.appName
     }
     
 //    func fibonacci(n: Int) {
