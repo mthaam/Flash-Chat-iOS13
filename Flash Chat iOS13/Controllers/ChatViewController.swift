@@ -63,10 +63,34 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController {
     
+//    func loadMessages() {
+//        messages = []
+//
+//        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+//            if let e = error {
+//                print("There was an issue retrieving data from fireStore : \(e)")
+//            } else {
+//                if let snapshotDocuments = querySnapshot?.documents {
+//                    for document in snapshotDocuments {
+//                        let data = document.data()
+//                        if let sender = data[K.FStore.senderField] as? String,
+//                           let messageBody = data[K.FStore.bodyField] as? String {
+//                            let newMessage = Message(sender: sender, body: messageBody)
+//                            self.messages.append(newMessage)
+//
+//                            DispatchQueue.main.async {
+//                                self.tableView.reloadData()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
     func loadMessages() {
-        messages = []
-        
-        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+        db.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
+            self.messages = []
             if let e = error {
                 print("There was an issue retrieving data from fireStore : \(e)")
             } else {
